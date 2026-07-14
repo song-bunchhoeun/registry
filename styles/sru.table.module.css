@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&display=swap');
+.photo {
+    margin: 35px auto;
+    max-width: 224px;
+    width: 180px;
+    display: block;
+}
+
+.table_container {
+    padding: 0 1em;
+    font-family: 'Kantumruy Pro', sans-serif;
+}
+
+.table {
+    width: 100%;
+    max-width: 740px;
+    margin: 0 auto;
+    line-height: 2.4em;
+}
+
+.table th,
+.table td {
+    text-align: left;
+    padding: 0;
+}
+.table th {
+    padding-right: 8px;
+}
+.line{
+    margin: 16px 0;
+    border-bottom: 1px solid #d1d3d4;
+    width: 100%;
+    float: left;
+}
+
+.table tr:last-child th,
+.table tr:last-child td {
+    border-bottom: none;
+    padding: 0 0 24px 0;
+}
+
+.table th {
+    font-size: 22px;
+}
+
+.table th span {
+    font-size: 22px;
+}
+
+.table td {
+    font-size: 26px;
+}
+
+.table td span {
+    font-size: 24px;
+    font-weight: 550;
+}
+.table td b,
+.table td strong{
+    font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+    .photo {
+        max-width: 152px;
+    }
+
+    .table {
+        max-width: 100%;
+        line-height: 1.5em;
+    }
+
+    .table th,
+    .table td {
+        text-align: left;
+    }
+
+    .table th {
+        font-size: 14px;
+    }
+
+    .table th span {
+        font-size: 16px;
+    }
+
+    .table td {
+        font-size: 18px;
+    }
+
+    .table td span {
+        font-size: 16px;
+    }
+}

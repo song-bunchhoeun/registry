@@ -1,0 +1,121 @@
+.container {
+	max-width: 1080px;
+	margin: 0 auto;
+	padding-bottom: 100px;
+}
+
+.headline {
+	font-weight: bold;
+	font-size: 1.4em;
+	color: #183f75;
+}
+
+.template_headline {
+	font-size: 1em;
+	font-weight: 600;
+	color: black;
+	padding-bottom: 0.6rem;
+	padding-top: 0.6rem;
+	padding-left: 0.8rem;
+	padding-right: 0.8rem;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.template_headline ~ * {
+	padding: 1rem;
+}
+
+.template_container {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	margin-top: 1rem;
+	gap: 0rem;
+}
+
+.template_id {
+	display: inline-block;
+	margin: 0 0.4rem;
+	background-color: rgba(0, 0, 0, 0.05);
+	font-weight: 500;
+	font-size: 14px;
+	color: gray;
+	padding: 0.3rem 0.6rem;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 2px;
+}
+
+.codemirror_container {
+	margin: 0.4em 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.8em;
+	padding: 1em;
+}
+
+.codemirror_container button {
+	appearance: none;
+	border: none;
+	background-color: white;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.7);
+	padding: 0.6em 1em;
+	transition: 0.1s ease;
+	font-size: 12px;
+}
+
+.codemirror_container button:not(:disabled):hover {
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	background-color: rgba(0, 0, 0, 0.05);
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.codemirror_container button:not(:disabled):active {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.01);
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.buttons {
+	display: flex;
+	gap: 0.4em;
+	flex-wrap: wrap;
+}
+
+.red {
+	color: orange;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.input_label {
+	font-weight: bold;
+	font-size: 12px;
+	color: slategray;
+}
+
+.input_wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4em;
+}
+
+.input {
+	flex-grow: 1;
+	border: 2px solid rgba(0, 0, 0, 0.1);
+	border-radius: 0;
+	font-family: inherit;
+	font-weight: 600;
+	font-size: 12px;
+	padding: 0.6em 0.8em;
+	outline: none;
+	transition: 0.1s ease;
+}
+
+.input:not(:disabled):focus {
+	border: 2px solid hsl(215, 66%, 20%);
+	background-color: hsl(215, 66%, 98%);
+	color: #183f75;
+}

@@ -1,0 +1,53 @@
+name: "Continuous Delivery (CD) 🚀"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    uses: ./.github/workflows/_docker.yml
+    with:
+      REPOSITORY: ${{ github.repository }}
+      DOCKER_FILE: Dockerfile
+
+  # deploy:
+  #   needs: [ build ]
+  #   runs-on: dgc-ubuntu-01
+  #   steps:
+  #     - uses: actions/checkout@v4
+
+  #     - name: Remote deploy to Docker service via SSH
+  #       env:
+  #         USER: ${{ secrets.REMOTE_USER }}
+  #         PORT: ${{ secrets.REMOTE_PORT }}
+  #         DEPLOY_SSH_PRIVATE_KEY: ${{ secrets.REMOTE_PRIVATE_KEY }}
+  #         IMAGE_IMAGE: ${{ needs.build.outputs.docker-image }}
+  #         COMPOSE_FILE: ${{ vars.COMPOSE_FILE }}
+  #         SERVICE_NAME: ${{ vars.SERVICE_NAME }}
+  #         REMOTE_MANAGER_HOSTS: ${{ secrets.REMOTE_MANAGER_HOST }} # Comma-separated list of servers
+  #       run: |
+  #         mkdir -p ~/.ssh
+  #         echo "$DEPLOY_SSH_PRIVATE_KEY" > ~/.ssh/dc-pdf-generator
+  #         chmod 600 ~/.ssh/dc-pdf-generator
+
+  #         echo "Host *" > ~/.ssh/config
+  #         echo "  StrictHostKeyChecking no" >> ~/.ssh/config
+  #         echo "  UserKnownHostsFile /dev/null" >> ~/.ssh/config
+
+  #         # Convert comma-separated list to an array
+  #         IFS=',' read -ra HOSTS <<< "$REMOTE_MANAGER_HOSTS"
+
+  #         # Deploy to each server
+  #         for HOST in "${HOSTS[@]}"; do
+  #           echo "Deploying to $HOST..."
+  #           ssh -i ~/.ssh/dc-pdf-generator -p $PORT $USER@$HOST 'bash -s' < ./deploy/deploy.sh $IMAGE_IMAGE $COMPOSE_FILE $SERVICE_NAME
+  #         done
+
+  #         rm ~/.ssh/dc-pdf-generator

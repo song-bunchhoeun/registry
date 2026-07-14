@@ -1,0 +1,10 @@
+name: "dc-pdf-generator-uat"
+
+services:
+
+  app:
+    # image: ghcr.io/dd/dc-pdf-generator:dev
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000"

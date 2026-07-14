@@ -1,0 +1,51 @@
+{
+  "type": "module",
+  "name": "digitalstamp-renderer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkailabCambodia/digitalstamp-renderer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SkailabCambodia/digitalstamp-renderer/issues"
+  },
+  "homepage": "https://github.com/SkailabCambodia/digitalstamp-renderer#readme",
+  "dependencies": {
+    "@codemirror/lang-json": "^6.0.1",
+    "@fontsource/kantumruy-pro": "^4.5.1",
+    "@govtechsg/decentralized-renderer-react-components": "^3.8.0",
+    "@govtechsg/open-attestation": "^6.5.2",
+    "@napi-rs/canvas": "^0.1.30",
+    "@next/font": "^13.4.6",
+    "@uiw/codemirror-theme-github": "^4.19.9",
+    "@uiw/react-codemirror": "^4.19.9",
+    "axios": "^1.6.2",
+    "canvas-text-wrapper": "^0.10.2",
+    "dayjs": "^1.11.19",
+    "fast-glob": "^3.2.12",
+    "jpeg-autorotate": "^9.0.0",
+    "js-base64": "^3.7.3",
+    "jsbarcode": "^3.11.5",
+    "json5": "^2.2.3",
+    "khmernumber": "^0.1.0",
+    "ky": "^0.33.2",
+    "lodash": "^4.17.21",
+    "next": "latest",
+    "pdfkit": "^0.13.0",
+    "piscina": "^3.2.0",
+    "qrcode": "^1.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-spinners": "^0.13.8",
+    "sharp": "^0.32.6",
+    "utif": "^3.1.0",
+    "webfontloader": "^1.6.28"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.43"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}

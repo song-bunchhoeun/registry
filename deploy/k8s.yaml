@@ -1,0 +1,40 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: dc-pdf-generator
+  namespace: verify-pdf-generator
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dc-pdf-generator
+  template:
+    metadata:
+      labels:
+        app: dc-pdf-generator
+      annotations:
+        keel.sh/notify: webhook
+        keel.sh/policy: "glob:main-v*"
+        keel.sh/pollSchedule: '@every 10m'
+        keel.sh/trigger: poll
+    spec:
+      containers:
+        - name: dc-pdf-generator
+          image: ghcr.io/skailabcambodia/dc-pdf-generator:main-0ba3e8a
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: dc-pdf-generator-nodeport
+  namespace: verify-pdf-generator
+spec:
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30085
+  selector:
+    app: dc-pdf-generator
