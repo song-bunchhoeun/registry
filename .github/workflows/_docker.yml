@@ -21,7 +21,7 @@ env:
 
 jobs:
   build:
-    runs-on: dgc-ubuntu-01
+    runs-on: ubuntu-latest
     outputs:
       docker-image: ${{ steps.resolved.outputs.docker-image}}
 
