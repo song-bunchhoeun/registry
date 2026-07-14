@@ -1,6 +1,5 @@
 # Stage 1: Install dependencies
 FROM node:18-slim AS deps
-RUN apt-get update && apt-get install -y --no-install-recommends libc6 && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN --mount=type=cache,target=/root/.npm npm ci
